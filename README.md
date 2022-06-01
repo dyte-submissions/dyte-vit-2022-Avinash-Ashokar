@@ -45,7 +45,7 @@ The above command is to check versions
 cooltool update -i input.csv axios@0.23.0 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
 ```
 
-The above command will create a pull request. Instead “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” value enter your access token.
+The above command will create a pull request. Instead of “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”, enter your access token.
 
 My access token will be deleted by the time you are reading this.
 
