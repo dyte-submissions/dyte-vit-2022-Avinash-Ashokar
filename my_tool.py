@@ -90,10 +90,64 @@ def cli():
 @cli.command()
 @click.option('-i', '--input', type=str, help='CSV File Location')
 @click.argument('ver', nargs=1)
-def read(input, ver):
+def check(input, ver):
     word = ver.split("@")
     packageName = word[0];
     versionNo = word[1];
+    
+    # opening the CSV file
+    with open(input, mode ='r')as file:
+    
+        # reading the CSV file
+        csvFile = csv.reader(file)
+        
+        newCSVFile = []
+        # displaying the contents of the CSV file
+        for lines in csvFile:
+            givenUrl = lines[1]+'main/package.json';
+            rawJSON = givenUrl.replace("github.com", "raw.githubusercontent.com")
+            response = json.loads(requests.get(rawJSON).text)
+
+            dependencies = response["dependencies"]
+
+            if packageName in dependencies:
+                eachRow = []
+                eachRow.append(lines[0])
+                eachRow.append(lines[1])
+
+                text = dependencies[packageName]
+                new_text = re.sub(r"[^0-9\.]", "", text)
+
+                eachRow.append(new_text)
+                if (new_text < versionNo):
+                    eachRow.append("false")
+                    newCSVFile.append(eachRow)
+                    print("All details are being stored in output.csv file")
+                else:
+                    eachRow.append("true")
+                    newCSVFile.append(eachRow)
+            
+        # print(newCSVFile)
+        fields = ["name", "repo", "version", "version_satisfied"]
+
+        with open("output.csv", 'w') as csvfile: 
+            # creating a csv writer object 
+            csvwriter = csv.writer(csvfile) 
+                
+            # writing the fields 
+            csvwriter.writerow(fields) 
+                
+            # writing the data rows 
+            csvwriter.writerows(newCSVFile)
+
+@cli.command()
+@click.option('-i', '--input', type=str, help='CSV File Location')
+@click.argument('ver', nargs=1)
+def update(input, ver):
+    word = ver.split("@")
+    packageName = word[0];
+    versionNo = word[1];
+    print(update)
     
     # opening the CSV file
     with open(input, mode ='r')as file:
@@ -138,9 +192,9 @@ def read(input, ver):
                     requestURL = requestURL.replace("api.github.com", "github.com")
                     requestURL = requestURL.replace("repos/", "")
                     requestURL = requestURL.replace("pulls", "pull")
-                    print(requestURL)
                     eachRow.append(requestURL)
                     newCSVFile.append(eachRow)
+                    print("All details are being stored in output.csv file")
                 else:
                     eachRow.append("true")
                     eachRow.append("")
