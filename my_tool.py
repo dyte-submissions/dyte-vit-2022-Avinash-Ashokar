@@ -5,10 +5,6 @@ import json
 import re
 import base64
 
-# Common Variables
-token = "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"
-bearToken = "Bearer " + token
-
 # Pull Request Parameters
 title = "Updating old libraries"
 body = "Please accept these awesome changes and secure our codebase from vulnerabilities"
@@ -143,11 +139,12 @@ def check(input, ver):
 @cli.command()
 @click.option('-i', '--input', type=str, help='CSV File Location')
 @click.argument('ver', nargs=1)
-def update(input, ver):
+@click.argument('token', nargs=1)
+def update(input, ver, token):
     word = ver.split("@")
     packageName = word[0];
     versionNo = word[1];
-    print(update)
+    bearToken = "Bearer " + token
     
     # opening the CSV file
     with open(input, mode ='r')as file:
