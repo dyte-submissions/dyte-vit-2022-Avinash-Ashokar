@@ -42,7 +42,7 @@ python setup.py develop
 jarvis configure ACCESS_TOKEN
 ```
 
-In my case it is “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”
+In my case it is “jarvis configure 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”
 
 My access token will be deleted by the time you are reading this 😅.
 
