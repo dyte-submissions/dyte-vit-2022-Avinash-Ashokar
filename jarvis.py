@@ -46,6 +46,6 @@ def update(input, ver):
 
     if (token == ""):
         print("\nConfigure Cooltool before using update command")
-        print("To configure type \"cooltool configure ACCESS_TOKEN\" ")
+        print("To configure type \"jarvis configure ACCESS_TOKEN\" ")
     else:
         mergeRequest(input, ver, bearToken)
