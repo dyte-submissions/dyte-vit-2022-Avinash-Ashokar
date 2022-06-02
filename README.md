@@ -73,5 +73,5 @@ The above command will create a pull request.
 ## Credits
 
 - Thanks for this activity. It was fun.
-- And Hats off to the person who wrote that notion instruction. It was really creative. Please give them a hike.
+- And Hats off to the person who wrote that notion instruction. It was really creative. Please give them a raise.
 - I must finally thank stackoverflow, for helping me when I am stuck.
