@@ -1,11 +1,8 @@
-# Github CLI Tool
+# JARVIS CLI Tool
 
 ## Prerequisite
 
-- Github Access Token
-
-[Creating a personal access token - GitHub Docs](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
-
+- [Github Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 - Python Virtualenv setup
 - Python3
 - Good Internet Connection
@@ -57,6 +54,21 @@ jarvis update -i input.csv axios@0.23.0
 ```
 
 The above command will create a pull request. 
+
+## Hidden Features
+
+- You could run `jarvis configure ACCESS_TOKEN` command as many time as you want.
+- `jarvis check` command can be used even without configuring jarvis cli tool.
+- `jarvis update` command knows when there is a existing Pull request.
+- If we are stuck somewhere, then we can execute `jarvis —help` to know the available list of commands
+- Both `jarvis check` and `jarvis update` command generate a output.csv file, which can be used to for later reference.
+
+## Future works
+
+- Need to make it more interactive.
+- Encrypt the access token file.
+- Modifying commands to check multiple package version at the same time.
+- Releasing it as a Pypi project.
 
 ## Credits
 
