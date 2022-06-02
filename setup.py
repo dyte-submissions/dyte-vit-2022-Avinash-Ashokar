@@ -6,16 +6,16 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
     requirements = fh.read()
     
 setup(
-    name = 'mytool',
+    name = 'jarvis',
     version = '0.0.1',
     author = 'Avinash A',
     author_email = 'mail_avinashashokar@pm.me',
     license = 'GNU General Public License v3.0>',
-    description = 'A tool made to solve Dyte Engineer\'s problem',
+    description = 'A tool made to solve Deprecated libraries',
     long_description = long_description,
     long_description_content_type = "text/markdown",
-    url = '<github url where the tool code will remain>',
-    py_modules = ['my_tool', 'app'],
+    url = 'https://github.com/Avinash-Ashokar/Avinash-Ashokar',
+    py_modules = ['jarvis', 'app'],
     packages = find_packages(),
     install_requires = [requirements],
     python_requires='>=3.7',
@@ -25,6 +25,6 @@ setup(
     ],
     entry_points = '''
         [console_scripts]
-        cooltool=my_tool:cli
+        jarvis=jarvis:cli
     '''
 )
