@@ -22,7 +22,7 @@ git clone https://github.com/dyte-submissions/dyte-vit-2022-Avinash-Ashokar.git
 ```
 
 ```jsx
-cd dyte-vit-2022-Avinash-Ashokar-main
+cd dyte-vit-2022-Avinash-Ashokar/
 ```
 
 ```jsx
@@ -75,16 +75,23 @@ Commands which can be used when we are stuck
 
 ## Hidden Features
 
-- You could run `jarvis configure ACCESS_TOKEN` command as many time as you want.
-- `jarvis update` command knows when there is an existing Pull request.
+- You could run `jarvis configure ACCESS_TOKEN` command as many time as you want. Jarvis is smart enough when you try to execute `check` and `update` command without configuring
 
 ![Untitled](JARVIS%20CLI%20Tool%20b9d3df401ce749768b02867019def7c8/Untitled%207.png)
+
+- Even a extra functionality is added to check whether the given access token is correct
+
+![Untitled](JARVIS%20CLI%20Tool%20b9d3df401ce749768b02867019def7c8/Untitled%208.png)
+
+- `jarvis update` command knows when there is an existing Pull request.
+
+![Untitled](JARVIS%20CLI%20Tool%20b9d3df401ce749768b02867019def7c8/Untitled%209.png)
 
 - If we are stuck somewhere, then we can execute `jarvis —help` to know the available list of commands.
 - Both `jarvis check` and `jarvis update` command generate a packgeName.csv file, which can be used for later reference.
 - Jarvis get’s a bit annoyed when someone tests it with a package which is not present in the given repository links.
 
-![Untitled](JARVIS%20CLI%20Tool%20b9d3df401ce749768b02867019def7c8/Untitled%208.png)
+![Untitled](JARVIS%20CLI%20Tool%20b9d3df401ce749768b02867019def7c8/Untitled%2010.png)
 
 ## Future works
 
