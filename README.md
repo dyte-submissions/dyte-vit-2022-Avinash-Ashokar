@@ -22,7 +22,7 @@ git clone https://github.com/dyte-submissions/dyte-vit-2022-Avinash-Ashokar.git
 ```
 
 ```jsx
-cd dyte-vit-2022-Avinash-Ashokar/
+cd dyte-vit-2022-Avinash-Ashokar-main
 ```
 
 ```jsx
